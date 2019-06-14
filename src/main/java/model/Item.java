@@ -39,6 +39,8 @@ public class Item {
     @ManyToOne
     private Collection collection;
 
+    private Item() {}
+
     public Item(String isbn, String title, String description, String author, ItemType type, Person rentedBy, Integer rentCounter, Collection collection) {
         this.isbn = isbn;
         this.title = title;

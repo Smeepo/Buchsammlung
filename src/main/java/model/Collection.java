@@ -14,13 +14,15 @@ public class Collection {
     @Column
     private String name;
 
+    @OneToOne
+    private Person owner;
+
+    private Collection() {}
+
     public Collection(String name, Person owner) {
         this.name = name;
         this.owner = owner;
     }
-
-    @OneToOne
-    private Person owner;
 
     @Override
     public String toString() {

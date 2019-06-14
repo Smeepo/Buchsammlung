@@ -35,9 +35,10 @@ public class MainController {
 
     @FXML
     private void initialize(){
+        personRepository.save(new Person("Hans", "Dampf", "Hauptstraße", "121", "42069", "Dopehausen"));
+
         initChoiceBoxes();
         initTableData();
-
     }
 
     private void initChoiceBoxes() {
@@ -54,6 +55,17 @@ public class MainController {
             }
         });
         personRepository.findAll().forEach(person -> choiceBoxUsers.getItems().add((Person) person));
+        choiceBoxUsers.setConverter(new StringConverter<Person>() {
+            @Override
+            public String toString(Person object) {
+                return object.getLastName() + ", " + object.getFirstName();
+            }
+
+            @Override
+            public Person fromString(String string) {
+                return null;
+            }
+        });
     }
 
     private void initTableData() {
