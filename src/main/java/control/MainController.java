@@ -35,7 +35,7 @@ public class MainController {
 
     @FXML
     private void initialize(){
-        personRepository.save(new Person("Hans", "Dampf", "Hauptstraße", "121", "42069", "Dopehausen"));
+        //personRepository.save(new Person("Hans", "Dampf", "Hauptstraße", "121", "42069", "Dopehausen"));
 
         initChoiceBoxes();
         initTableData();
