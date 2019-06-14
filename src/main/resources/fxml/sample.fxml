@@ -128,15 +128,33 @@
                         </BorderPane>
                      </content>
                 </Tab>
-                <Tab text="Bilder">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
+                <Tab text="Kollektion">
+                     <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <top>
+                              <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label alignment="TOP_LEFT" text="Name" />
+                                          <TextField fx:id="txtCollectionName" />
+                                          <Label text="Besitzer" />
+                                          <ChoiceBox fx:id="choiceBoxCollectionOwner" prefWidth="150.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </top>
+                           <bottom>
+                              <Button fx:id="btnAddCollection" mnemonicParsing="false" text="Hinzufügen" />
+                           </bottom>
+                        </BorderPane>
+                     </content>
                 </Tab>
                   <Tab text="Emotionen">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
+                     <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" />
+                     </content>
                   </Tab>
               </tabs>
             </TabPane>

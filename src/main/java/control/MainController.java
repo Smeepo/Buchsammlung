@@ -38,6 +38,9 @@ public class MainController {
     private ChoiceBox<Person> choiceBoxUsers = new ChoiceBox<>();
 
     @FXML
+    private ChoiceBox<Person> choiceBoxCollectionOwner = new ChoiceBox<>();
+
+    @FXML
     private TextField txtFirstName = new TextField();
 
     @FXML
@@ -56,7 +59,13 @@ public class MainController {
     private TextField txtHouseNumber = new TextField();
 
     @FXML
+    private TextField txtCollectionName = new TextField();
+
+    @FXML
     private Button btnAddPerson = new Button();
+
+    @FXML
+    private Button btnAddCollection = new Button();
 
     @FXML
     private void initialize(){
@@ -67,6 +76,7 @@ public class MainController {
     }
 
     private void initNewDataButtons() {
+        LOGGER.debug("Initializing Add Person Button");
         btnAddPerson.setOnAction(event -> {
             personRepository.save(new Person(txtFirstName.getText(), txtLastName.getText(), txtStreet.getText(), txtHouseNumber.getText(), txtZipCode.getText(), txtCity.getText()));
             txtFirstName.clear();
@@ -77,14 +87,31 @@ public class MainController {
             txtZipCode.clear();
             reloadPersonChoiceBox();
         });
+
+        LOGGER.debug("Initializing Add Collection Button");
+        btnAddCollection.setOnAction(event -> {
+            collectionRepository.save(new Collection(txtCollectionName.getText(), choiceBoxCollectionOwner.getValue()));
+            txtCollectionName.clear();
+            choiceBoxCollectionOwner.setValue(null);
+            reloadCollectionChoiceBox();
+        });
+    }
+
+    private void reloadCollectionChoiceBox() {
+        LOGGER.debug("Reloading Collection ChoiceBox");
+        choiceBoxCollections.getItems().clear();
+        collectionRepository.findAll().forEach(collection -> choiceBoxCollections.getItems().add(collection));
     }
 
     private void reloadPersonChoiceBox() {
+        LOGGER.debug("Reloading Users and Collection Owner ChoiceBox");
         choiceBoxUsers.getItems().clear();
         personRepository.findAll().forEach(collection -> choiceBoxUsers.getItems().add(collection));
+        choiceBoxCollectionOwner.setItems(choiceBoxUsers.getItems());
     }
 
     private void initChoiceBoxes() {
+        LOGGER.debug("Initializing Collections ChoiceBox");
         collectionRepository.findAll().forEach(collection -> choiceBoxCollections.getItems().add(collection));
         choiceBoxCollections.setConverter(new StringConverter<Collection>() {
             @Override
@@ -97,7 +124,9 @@ public class MainController {
                 return collectionRepository.findFirstByName(string);
             }
         });
-        personRepository.findAll().forEach(person -> choiceBoxUsers.getItems().add((Person) person));
+
+        LOGGER.debug("Initializing Users and Collection Owner ChoiceBox");
+        personRepository.findAll().forEach(person -> choiceBoxUsers.getItems().add(person));
         choiceBoxUsers.setConverter(new StringConverter<Person>() {
             @Override
             public String toString(Person object) {
@@ -109,6 +138,8 @@ public class MainController {
                 return null;
             }
         });
+        choiceBoxCollectionOwner.setConverter(choiceBoxUsers.getConverter());
+        choiceBoxCollectionOwner.setItems(choiceBoxUsers.getItems());
     }
 
     private void initTableData() {
