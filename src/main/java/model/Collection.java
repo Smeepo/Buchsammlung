@@ -14,6 +14,11 @@ public class Collection {
     @Column
     private String name;
 
+    public Collection(String name, Person owner) {
+        this.name = name;
+        this.owner = owner;
+    }
+
     @OneToOne
     private Person owner;
 

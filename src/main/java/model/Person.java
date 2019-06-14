@@ -31,4 +31,13 @@ public class Person {
     @Column(name = "rent_counter")
     private Integer rentCounter;
 
+    public Person(String firstName, String lastName, String street, String houseNumber, String zipCode, String city, Integer rentCounter) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.street = street;
+        this.houseNumber = houseNumber;
+        this.zipCode = zipCode;
+        this.city = city;
+        this.rentCounter = rentCounter;
+    }
 }

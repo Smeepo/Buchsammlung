@@ -37,6 +37,7 @@ public class MainController {
     private void initialize(){
         initChoiceBoxes();
         initTableData();
+
     }
 
     private void initChoiceBoxes() {
