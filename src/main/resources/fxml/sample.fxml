@@ -57,8 +57,87 @@
          <content>
             <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
-                <Tab text="Party People" />
-                <Tab text="Sachen die Sachen machen" />
+                <Tab text="Party People">
+                     <content>
+                        <TableView prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                     </content></Tab>
+                <Tab text="Sachen die Sachen machen">
+                     <content>
+                        <TableView prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                     </content></Tab>
+                  <Tab text="Untitled Tab">
+                     <content>
+                        <TableView prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </content>
+      </Tab>
+      <Tab text="Neuer Eintrag">
+         <content>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Menschen">
+                     <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <bottom>
+                              <Button fx:id="btnAddPerson" mnemonicParsing="false" text="Hinzufügen" />
+                           </bottom>
+                           <center>
+                              <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Vorname" />
+                                          <TextField fx:id="txtFirstName" />
+                                          <Label text="Nachname" />
+                                          <TextField fx:id="txtLastName" />
+                                          <Label text="Straße" />
+                                          <TextField fx:id="txtStreet" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Hausnummer" />
+                                          <TextField fx:id="txtHouseNumber" />
+                                          <Label text="Postleitzahl" />
+                                          <TextField fx:id="txtZipCode" />
+                                          <Label text="Stadt" />
+                                          <TextField fx:id="txtCity" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </center>
+                        </BorderPane>
+                     </content>
+                </Tab>
+                <Tab text="Bilder">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+                  <Tab text="Emotionen">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
               </tabs>
             </TabPane>
          </content>
