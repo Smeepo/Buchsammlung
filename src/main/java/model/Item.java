@@ -1,7 +1,7 @@
 package model;
 
 
-import com.sun.istack.Nullable;
+
 
 import javax.persistence.*;
 
