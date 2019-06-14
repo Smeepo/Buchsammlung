@@ -1,22 +1,24 @@
-package sample;
+package control;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"model", "repository", "sample"})
+@ComponentScan(basePackages = {"model", "repository", "control"})
 public class Main extends Application {
 
     private Parent rootNode;
     private FXMLLoader fxmlLoader;
     private ConfigurableApplicationContext springContext;
+    private static final Logger LOGGER = LoggerFactory.getLogger(Main.class.getName());
 
     @Override
     public void start(Stage primaryStage) throws Exception{
