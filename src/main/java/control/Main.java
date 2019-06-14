@@ -8,10 +8,13 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
+@EnableJpaRepositories
 @ComponentScan(basePackages = {"model", "repository", "control"})
 public class Main extends Application {
 
@@ -22,8 +25,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+        SpringApplicationBuilder builder = new SpringApplicationBuilder(Main.class);
+
+        this.springContext = builder.headless(false).run();
         fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxml/sample.fxml"));
+        fxmlLoader.setControllerFactory(springContext::getBean);
         rootNode = fxmlLoader.load();
         primaryStage.setTitle("Büchaz");
         primaryStage.setScene(new Scene(rootNode, 1200, 650));

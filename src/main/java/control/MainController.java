@@ -28,10 +28,10 @@ public class MainController {
     private ItemRepository itemRepository;
 
     @FXML
-    private ChoiceBox<Collection> choiceBoxCollections;
+    private ChoiceBox<Collection> choiceBoxCollections = new ChoiceBox<>();
 
     @FXML
-    private ChoiceBox<Person> choiceBoxUsers;
+    private ChoiceBox<Person> choiceBoxUsers = new ChoiceBox<>();
 
     @FXML
     private void initialize(){
@@ -41,7 +41,7 @@ public class MainController {
     }
 
     private void initChoiceBoxes() {
-        collectionRepository.findAll().forEach(collection -> choiceBoxCollections.getItems().add((Collection) collection));
+        collectionRepository.findAll().forEach(collection -> choiceBoxCollections.getItems().add(collection));
         choiceBoxCollections.setConverter(new StringConverter<Collection>() {
             @Override
             public String toString(Collection object) {
