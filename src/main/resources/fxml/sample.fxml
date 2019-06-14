@@ -128,7 +128,7 @@
                         </BorderPane>
                      </content>
                 </Tab>
-                <Tab text="Kollektion">
+                <Tab text="Kollektionen">
                      <content>
                         <BorderPane prefHeight="200.0" prefWidth="200.0">
                            <top>
@@ -151,7 +151,7 @@
                         </BorderPane>
                      </content>
                 </Tab>
-                  <Tab text="Emotionen">
+                  <Tab text="Items">
                      <content>
                         <BorderPane prefHeight="200.0" prefWidth="200.0" />
                      </content>

@@ -16,6 +16,7 @@ import repository.ItemRepository;
 import repository.PersonRepository;
 
 import java.beans.EventHandler;
+import java.util.Objects;
 
 @Controller
 public class MainController {
@@ -116,6 +117,7 @@ public class MainController {
         choiceBoxCollections.setConverter(new StringConverter<Collection>() {
             @Override
             public String toString(Collection object) {
+                if(Objects.isNull(object)) return "";
                 return object.getName();
             }
 
