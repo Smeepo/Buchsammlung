@@ -20,6 +20,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/fxml/sample.fxml"));
         rootNode = fxmlLoader.load();
         primaryStage.setTitle("Büchaz");
