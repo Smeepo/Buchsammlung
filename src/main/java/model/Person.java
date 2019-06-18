@@ -14,6 +14,36 @@ public class Person {
     @Column(name = "first_name")
     private String firstName;
 
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Column(name = "street")
+    private String street;
+
+    @Column(name = "house_number")
+    private String houseNumber;
+
+    @Column(name = "zip_code")
+    private String zipCode;
+
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "rent_counter")
+    private Integer rentCounter;
+
+    private Person() {}
+
+    public Person(String firstName, String lastName, String street, String houseNumber, String zipCode, String city) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.street = street;
+        this.houseNumber = houseNumber;
+        this.zipCode = zipCode;
+        this.city = city;
+        this.rentCounter = 0;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -109,36 +139,6 @@ public class Person {
 
     public void setRentCounter(Integer rentCounter) {
         this.rentCounter = rentCounter;
-    }
-
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "street")
-    private String street;
-
-    @Column(name = "house_number")
-    private String houseNumber;
-
-    @Column(name = "zip_code")
-    private String zipCode;
-
-    @Column(name = "city")
-    private String city;
-
-    @Column(name = "rent_counter")
-    private Integer rentCounter;
-
-    private Person() {}
-
-    public Person(String firstName, String lastName, String street, String houseNumber, String zipCode, String city) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.street = street;
-        this.houseNumber = houseNumber;
-        this.zipCode = zipCode;
-        this.city = city;
-        this.rentCounter = 0;
     }
 
     public void incrementRentCounter(){

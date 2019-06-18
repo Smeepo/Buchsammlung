@@ -79,35 +79,72 @@
             <content>
                 <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
-                        <Tab text="Party People">
-                            <content>
-                                <TableView prefHeight="200.0" prefWidth="200.0">
-                                    <columns>
-                                        <TableColumn prefWidth="75.0" text="C1" />
-                                        <TableColumn prefWidth="75.0" text="C2" />
-                                    </columns>
-                                </TableView>
-                            </content>
+                        <Tab text="Menschen">
+                     <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <TableView fx:id="userControlTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                <columns>
+                                  <TableColumn fx:id="userControlTableColumnName" prefWidth="75.0" text="Name" />
+                                  <TableColumn fx:id="userControlTableColumnAddress" prefWidth="75.0" text="Adresse" />
+                                    <TableColumn fx:id="userControlTableColumnZip" prefWidth="75.0" text="PLZ" />
+                                    <TableColumn fx:id="userControlTableColumnCity" prefWidth="75.0" text="Stadt" />
+                                </columns>
+                              </TableView>
+                           </center>
+                           <bottom>
+                              <Button fx:id="btnDeleteUser" mnemonicParsing="false" text="Löschen">
+                                 <BorderPane.margin>
+                                    <Insets bottom="5.0" left="5.0" top="5.0" />
+                                 </BorderPane.margin>
+                              </Button>
+                           </bottom>
+                        </BorderPane>
+                     </content>
                         </Tab>
-                        <Tab text="Sachen die Sachen machen">
-                            <content>
-                                <TableView prefHeight="200.0" prefWidth="200.0">
-                                    <columns>
-                                        <TableColumn prefWidth="75.0" text="C1" />
-                                        <TableColumn prefWidth="75.0" text="C2" />
-                                    </columns>
-                                </TableView>
-                            </content>
+                        <Tab text="Kollektionen">
+                     <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                                      <TableView fx:id="collectionControlTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                          <columns>
+                                              <TableColumn fx:id="collectionControlTableColumnName" prefWidth="75.0" text="Name" />
+                                              <TableColumn fx:id="collectionControlTableColumnOwner" prefWidth="75.0" text="Owner" />
+                                          </columns>
+                                      </TableView>
+                           </center>
+                           <bottom>
+                              <Button fx:id="btnDeleteCollection" mnemonicParsing="false" text="Löschen">
+                                 <BorderPane.margin>
+                                    <Insets bottom="5.0" left="5.0" top="5.0" />
+                                 </BorderPane.margin>
+                              </Button>
+                           </bottom>
+                        </BorderPane>
+                     </content>
                         </Tab>
-                        <Tab text="Untitled Tab">
-                            <content>
-                                <TableView prefHeight="200.0" prefWidth="200.0">
-                                    <columns>
-                                        <TableColumn prefWidth="75.0" text="C1" />
-                                        <TableColumn prefWidth="75.0" text="C2" />
-                                    </columns>
-                                </TableView>
-                            </content>
+                        <Tab text="Items">
+                     <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                                      <TableView fx:id="itemControlTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                          <columns>
+                                              <TableColumn fx:id="itemControlTableColumnIsbn" prefWidth="75.0" text="ISBN" />
+                                              <TableColumn fx:id="itemControlTableColumnTitle" prefWidth="75.0" text="Titel" />
+                                    <TableColumn fx:id="itemControlTableColumnAuthor" prefWidth="75.0" text="Autor" />
+                                    <TableColumn fx:id="itemControlTableColumnType" prefWidth="75.0" text="Typ" />
+                                          </columns>
+                                      </TableView>
+                           </center>
+                           <bottom>
+                              <Button fx:id="btnDeleteItem" mnemonicParsing="false" text="Löschen">
+                                 <BorderPane.margin>
+                                    <Insets bottom="5.0" left="5.0" top="5.0" />
+                                 </BorderPane.margin>
+                              </Button>
+                           </bottom>
+                        </BorderPane>
+                     </content>
                         </Tab>
                     </tabs>
                 </TabPane>
@@ -235,5 +272,45 @@
                 </TabPane>
             </content>
         </Tab>
+      <Tab text="Statistik">
+         <content>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Items">
+                     <content>
+                        <TableView fx:id="itemStatsTable" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="itemStatsTableColumnIsbn" prefWidth="75.0" text="ISBN" />
+                            <TableColumn fx:id="itemStatsTableColumnTitle" prefWidth="75.0" text="Titel" />
+                              <TableColumn fx:id="itemStatsTableColumnCounter" prefWidth="75.0" text="Ausleihzähler" />
+                          </columns>
+                        </TableView>
+                     </content>
+                </Tab>
+                <Tab text="Menschen">
+                     <content>
+                        <TableView fx:id="userStatsTable" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="userStatsTableColumnName" prefWidth="75.0" text="Name" />
+                            <TableColumn fx:id="userStatsTableColumnCounter" prefWidth="75.0" text="Ausleihzähler" />
+                          </columns>
+                        </TableView>
+                     </content>
+                </Tab>
+                  <Tab text="Kollektion">
+                     <content>
+                        <TableView fx:id="collectionStatsTable" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="collectionStatsTableColumnName" prefWidth="75.0" text="Name" />
+                            <TableColumn fx:id="collectionStatsTableColumnOwner" prefWidth="75.0" text="Owner" />
+                              <TableColumn fx:id="collectionStatsTableColumnCounter" prefWidth="75.0" text="Counter" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </content>
+      </Tab>
     </tabs>
 </TabPane>

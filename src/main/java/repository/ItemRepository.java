@@ -14,4 +14,6 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     List<Item> findAllByType(ItemType type);
     List<Item> findAllByCollectionAndRentedByIsNull(Collection collection);
     List<Item> findAllByRentedByIsNotNull();
+
+    List<Item> findAllByCollection(Collection collection);
 }
