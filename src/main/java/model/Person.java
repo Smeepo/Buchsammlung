@@ -39,8 +39,7 @@ public class Person {
                 Objects.equals(getStreet(), person.getStreet()) &&
                 Objects.equals(getHouseNumber(), person.getHouseNumber()) &&
                 Objects.equals(getZipCode(), person.getZipCode()) &&
-                Objects.equals(getCity(), person.getCity()) &&
-                Objects.equals(getRentCounter(), person.getRentCounter());
+                Objects.equals(getCity(), person.getCity());
     }
 
     @Override
@@ -140,5 +139,9 @@ public class Person {
         this.zipCode = zipCode;
         this.city = city;
         this.rentCounter = 0;
+    }
+
+    public void incrementRentCounter(){
+        this.setRentCounter(this.getRentCounter() + 1);
     }
 }
