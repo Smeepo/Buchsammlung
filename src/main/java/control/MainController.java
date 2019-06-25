@@ -309,7 +309,7 @@ public class MainController {
             availableTable.getSelectionModel().getSelectedItems().stream().filter(Objects::nonNull).forEach(item -> {
                 item.rentItem(choiceBoxUsers.getValue());
                 itemRepository.save(item);
-                personRepository.save(item.getRentedBy());
+                personRepository.save(choiceBoxUsers.getValue());
             });
             loadAvailableItemTable();
             loadRentItemTable();

@@ -35,10 +35,12 @@ public class Main extends Application {
         fxmlLoader.setLocation(getClass().getResource("/fxml/main.fxml"));
         fxmlLoader.setControllerFactory(springContext::getBean);
         rootNode = fxmlLoader.load();
-        primaryStage.setTitle("Büchaz");
+
+        primaryStage.setTitle("DXC Büchaz");
         primaryStage.setScene(new Scene(rootNode, 1200, 650));
         primaryStage.getScene().getStylesheets().add("/css/bootstrapfx.css");
         primaryStage.show();
+
     }
 
 
